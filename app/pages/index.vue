@@ -30,9 +30,14 @@
           </v-row>
 
           <v-row>
-            <v-col cols="12">
+            <v-col cols="6">
               <v-btn color="primary" :loading="loading" type="submit"
                 >Export data</v-btn
+              >
+            </v-col>
+            <v-col cols="6" class="text-right">
+              <v-btn color="success" type="button" @click="downloadSample"
+                >Download sample employees CSV</v-btn
               >
             </v-col>
           </v-row>
@@ -96,5 +101,12 @@ const exportData = async () => {
   if (result.valid) {
     await processData();
   }
+};
+
+const downloadSample = () => {
+  const link = document.createElement("a");
+  link.href = "/employees.csv";
+  link.download = "employees.csv";
+  link.click();
 };
 </script>
