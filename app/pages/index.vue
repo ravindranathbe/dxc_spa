@@ -31,7 +31,9 @@
 
           <v-row>
             <v-col cols="12">
-              <v-btn color="primary" type="submit">Export data</v-btn>
+              <v-btn color="primary" :loading="loading" type="submit"
+                >Export data</v-btn
+              >
             </v-col>
           </v-row>
         </v-form>
@@ -51,9 +53,11 @@ import rules from "~/utils/validations";
 import { downloadFileAsCsv } from "~/utils/file";
 
 const { $api } = useNuxtApp();
+const loading = ref(false);
 
 const processData = async () => {
   try {
+    loading.value = true;
     const formData = new FormData();
 
     formData.append("employees_file", employeesList.value);
@@ -72,6 +76,8 @@ const processData = async () => {
     snackbar.value = true;
     snackbarText.value = "Error exporting data";
     snackbarColor.value = "error";
+  } finally {
+    loading.value = false;
   }
 };
 
