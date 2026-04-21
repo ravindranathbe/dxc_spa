@@ -1,75 +1,33 @@
-# Nuxt Minimal Starter
+# Project setup
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Follow these steps to run the application locally:
 
-## Setup
-
-Make sure to install dependencies:
+## Install dependencies
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Environment configuration
 
-Start the development server on `http://localhost:3000`:
+Create your environment file from the example:
 
 ```bash
-# npm
+cp .env.example .env
+```
+
+Update the .env file with the required configuration values.
+
+## Start the development server
+
+```bash
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Application URL
 
-Build the application for production:
+Once the app is running, you can access it at:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+http://localhost:3000
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
